@@ -68,12 +68,12 @@ elif equation <= 6:
     svalue = equation
 print "What is the last 2 digits of the year were you born in?"
 year = int(raw_input())
-oyear = year / 4
 decider = year
 divisor2 = year / 28
 math.trunc(divisor2)
 divisor2 = divisor2 * 28
 year = year - divisor2
+#Other Variable
 oyear = year / 4
 math.trunc(oyear)
 nvalue = year + oyear
