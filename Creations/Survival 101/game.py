@@ -1,12 +1,35 @@
 from sys import exit
+from time import sleep
 import time
-import encounter
 
-#Hp at start of game
+#Hp at start of game:
 hp = 100
-#The prompt for inputs
-prompt = "> "
 
+#Bear encounter
+def bear(hp):
+    choice = raw_input("> ")
+    if "stand" in choice:
+        print "The bear walks off, and you continue on your way"
+    elif "run" in choice:
+        print "..."
+        time.sleep(2)
+        print "The bear chases you and your face gets mauled."
+        print "You barely make it out alive, however you have sustained serious damage"
+        hp = hp-60
+        currenthp(hp)
+    elif "agressive" in choice:
+        print "..."
+        time.sleep(2)
+        print "The bear sees you as a threat and attacks you."
+        print "The bear nearly kills you and you are almost dead"
+        hp = hp-90
+        currenthp(hp)
+    else:
+        print "Well do something!"
+#Bee encounter
+    
+
+    
 #Function to display the current hp of the current player
 def currenthp(hp):
     if hp < 100:
@@ -15,7 +38,7 @@ def currenthp(hp):
         dead()
     else:
         print "You are still healthy, good job!"
-
+        
 #Called when player dies
 def dead():
     print "You sustained too much damage, and as a result have died."
@@ -27,6 +50,12 @@ def dead():
         start_game()
     else:
         exit(0)
+
+
+
+#The prompt for inputs
+prompt = "> "
+
  #Called to Start the Game, useful for restarting the program       
 def start_game():
     print "Welcome to Survival 101"
@@ -49,7 +78,7 @@ print "What do you do?"
 print "Stand your ground, Run away, be agressive in an attempt to scare the bear"
 
 #first encounter
-encounter.bear(hp)
+bear(hp)
 
 #Start of second encounter
 print "You continue walking and see a killer bee approaching you"
