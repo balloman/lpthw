@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5393cf05-85ff-4fa6-9223-ad71251ad355}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>examples\EX37\test.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -88,7 +88,6 @@
     <Compile Include="lpthw\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="Pythagoreon\Calculator.py" />
-    <Compile Include="test.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".c9\metadata\workspace\examples\pretty.txt" />
