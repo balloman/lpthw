@@ -1,4 +1,5 @@
 ﻿from time import sleep
+import os.path
 
 #Editor for the file
 def file_editor():
@@ -15,6 +16,7 @@ def editor():
     print "Welcome to the editor"
     print "What is the file you would like to open"
     fname = raw_input(">>> ") + ".txt"
+    assert (os.path.isfile(fname)), "File does not exist!"
     print "opening file"
     sleep(1.5)
     print "." 
