@@ -72,7 +72,13 @@
     <Compile Include="examples\ex32.py" />
     <Compile Include="examples\ex33.py" />
     <Compile Include="examples\ex35.py" />
+    <Compile Include="examples\EX37\Calculator.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\EX37\test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\EX37\yield.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="examples\ex4.py" />
