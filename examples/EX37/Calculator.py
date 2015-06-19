@@ -3,4 +3,5 @@ class Calculator(object):
         self.current = 0
     def add(self, amount):
         self.current += amount
-    def 
+    def getCurrent(self):
+        return self.current
