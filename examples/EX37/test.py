@@ -41,6 +41,8 @@ def editor():
     except AssertionError:
         print "File does not exist."
         starter()
+    finally:
+        print "Finally!"
 #For the start of the program
 def start():
     print "Editor or Creator?"
