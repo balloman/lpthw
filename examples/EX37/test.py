@@ -45,6 +45,12 @@ def editor():
 def start():
     print "Editor or Creator?"
     choice = raw_input(">>> ")
+    if choice.isdigit():
+        try:
+            raise SyntaxError("Is number!")
+        except SyntaxError:
+            print "File entered is number rather than string"
+            start()
     if "dit" in choice:
         editor()
     else:
