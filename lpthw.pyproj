@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5393cf05-85ff-4fa6-9223-ad71251ad355}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>examples\EX37\class1.py</StartupFile>
+    <StartupFile>examples\ex39_test.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -78,7 +78,13 @@
     <Compile Include="examples\EX37\classes.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="examples\EX37\lambda.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\EX37\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\EX37\string.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="examples\EX37\test.py">
@@ -87,12 +93,24 @@
     <Compile Include="examples\EX37\yield.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="examples\ex38.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\ex39.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\ex39_test.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\ex4.py" />
     <Compile Include="examples\ex5.py" />
     <Compile Include="examples\ex6.py" />
     <Compile Include="examples\ex7.py" />
     <Compile Include="examples\ex8.py" />
     <Compile Include="examples\ex9.py" />
+    <Compile Include="examples\hashmap.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\test.py" />
     <Compile Include="lpthw\settings.py" />
     <Compile Include="lpthw\urls.py" />

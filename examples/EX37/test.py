@@ -42,7 +42,7 @@ def editor():
         print "File does not exist."
         starter()
     finally:
-        print "Finally!"
+        print "Finally"
 #For the start of the program
 def start():
     print "Editor or Creator?"
