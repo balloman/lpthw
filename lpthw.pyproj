@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5393cf05-85ff-4fa6-9223-ad71251ad355}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>examples\ex41.py</StartupFile>
+    <StartupFile>examples\EX43\ex43_classes.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -109,6 +109,12 @@
     <Compile Include="examples\ex41.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="examples\ex42.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="examples\EX43\ex43_classes.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\ex5.py" />
     <Compile Include="examples\ex6.py" />
     <Compile Include="examples\ex7.py" />
@@ -148,6 +154,7 @@
     <Folder Include="Creations\Survival 101" />
     <Folder Include="examples" />
     <Folder Include="examples\EX37\" />
+    <Folder Include="examples\EX43\" />
     <Folder Include="lpthw" />
     <Folder Include="Pythagoreon" />
   </ItemGroup>
