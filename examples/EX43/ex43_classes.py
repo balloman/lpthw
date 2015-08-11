@@ -46,12 +46,50 @@ class LaserWeaponArmory(Scene):
         digit2 = randint(1, 9)
         digit3 = randint(1, 9)
         digit4 = randint(1, 9)
+        self.message = "Each digit is a number from 1-9"
         print "Each digit is a number from 1-9"
         print "Guess all the digits to open the door"
-        udigit1 = raw_input(self.prompt)
-        udigit2 = raw_input(self.prompt)
-        udigit3 = raw_input(self.prompt)
-        udigit4 = raw_input(self.prompt)
+        udigit1 = int(raw_input(self.prompt))
+        udigit2 = int(raw_input(self.prompt))
+        udigit3 = int(raw_input(self.prompt))
+        udigit4 = int(raw_input(self.prompt))
+        if udigit1 == digit1:
+            correct1 = True
+        elif udigit1 > digit1:
+            print "Your number is greater that the 1st digit."
+        elif udigit1 < digit1:
+            print "Your 1st digit is smaller than the 1st digit."
+        elif udigit1 > 9:
+            print self.message
+            return 'laser_weapon_armory'
+        if udigit2 == digit2:
+            correct1 = True
+        elif udigit2 > digit2:
+            print "Your number is greater that the 1st digit."
+        elif udigit2 < digit2:
+            print "Your 1st digit is smaller than the 1st digit."
+        elif udigit2 > 9:
+            print self.message
+            return 'laser_weapon_armory'
+        if udigit3 == digit3:
+            correct1 = True
+        elif udigit3 > digit3:
+            print "Your number is greater that the 1st digit."
+        elif udigit3 < digit3:
+            print "Your 1st digit is smaller than the 1st digit."
+        elif udigit3 > 9:
+            print self.message
+            return 'laser_weapon_armory'
+        if udigit4 == digit3:
+            correct1 = True
+        elif udigit4 > digit3:
+            print "Your number is greater that the 1st digit."
+        elif udigit4 < digit3:
+            print "Your 1st digit is smaller than the 1st digit."
+        elif udigit4 > 9:
+            print self.message
+            return 'laser_weapon_armory'
+
 
 
 class TheBridge(Scene):
