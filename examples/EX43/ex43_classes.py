@@ -36,10 +36,11 @@ class CentralCorridor(Scene):
 
 class LaserWeaponArmory(Scene):
     def enter(self):
+        self.prompt = ">>> "
         print "You walk in to see a huge room of weapons."
         print "There are quite a lot of weapons here."
         print 'You see a door that says "Top Secret!" that has a keypad beside it.'
-        print "It looks like you need a code to get into the room"
+        print "It looks like you need a code to get into the room"                                                                         
         print "The code is 4 digits."
         digit1 = randint(1, 9)
         digit2 = randint(1, 9)
@@ -47,7 +48,10 @@ class LaserWeaponArmory(Scene):
         digit4 = randint(1, 9)
         print "Each digit is a number from 1-9"
         print "Guess all the digits to open the door"
-
+        udigit1 = raw_input(self.prompt)
+        udigit2 = raw_input(self.prompt)
+        udigit3 = raw_input(self.prompt)
+        udigit4 = raw_input(self.prompt)
 
 
 class TheBridge(Scene):
