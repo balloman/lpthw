@@ -1,4 +1,4 @@
-from sys import exit
+﻿from sys import exit
 from random import randint
 
 class Scene(object):
@@ -27,11 +27,28 @@ class CentralCorridor(Scene):
         joke = raw_input(self.prompt)
         if len(joke) > 10:
             print "Success!!"
-            print "The 
+            print "The Gothon laughs at your joke and you blast him with your gun before he can react."
+            return 'laser_weapon_armory'
+        else:
+            print "Joke was not good enough"
+            print "You die for bad joke!!!"
+            return 'death'
 
 class LaserWeaponArmory(Scene):
     def enter(self):
-        pass
+        print "You walk in to see a huge room of weapons."
+        print "There are quite a lot of weapons here."
+        print 'You see a door that says "Top Secret!" that has a keypad beside it.'
+        print "It looks like you need a code to get into the room"
+        print "The code is 4 digits."
+        digit1 = randint(1, 9)
+        digit2 = randint(1, 9)
+        digit3 = randint(1, 9)
+        digit4 = randint(1, 9)
+        print "Each digit is a number from 1-9"
+        print "Guess all the digits to open the door"
+
+
 
 class TheBridge(Scene):
     def enter(self):

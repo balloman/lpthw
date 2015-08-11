@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{665f3005-4724-4bdc-8a06-882ba3dc73c5}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Creations\Age Calculator.py" />
+    <Compile Include="Creations\DayCalc.py" />
+    <Compile Include="Creations\Survival 101\game.py" />
+    <Compile Include="Creations\try.py" />
+    <Compile Include="examples\ex1.py" />
+    <Compile Include="examples\ex10.py" />
+    <Compile Include="examples\ex11.py" />
+    <Compile Include="examples\ex12.py" />
+    <Compile Include="examples\ex13.py" />
+    <Compile Include="examples\ex14.py" />
+    <Compile Include="examples\ex15.py" />
+    <Compile Include="examples\ex16.py" />
+    <Compile Include="examples\ex17.py" />
+    <Compile Include="examples\ex18.py" />
+    <Compile Include="examples\ex19.py" />
+    <Compile Include="examples\ex20.py" />
+    <Compile Include="examples\ex21.py" />
+    <Compile Include="examples\ex24.py" />
+    <Compile Include="examples\ex25.py" />
+    <Compile Include="examples\ex26.py" />
+    <Compile Include="examples\ex29.py" />
+    <Compile Include="examples\ex3.py" />
+    <Compile Include="examples\ex30.py" />
+    <Compile Include="examples\ex31.py" />
+    <Compile Include="examples\ex32.py" />
+    <Compile Include="examples\ex33.py" />
+    <Compile Include="examples\ex35.py" />
+    <Compile Include="examples\EX37\class1.py" />
+    <Compile Include="examples\EX37\classes.py" />
+    <Compile Include="examples\EX37\lambda.py" />
+    <Compile Include="examples\EX37\module1.py" />
+    <Compile Include="examples\EX37\string.py" />
+    <Compile Include="examples\EX37\test.py" />
+    <Compile Include="examples\EX37\yield.py" />
+    <Compile Include="examples\ex38.py" />
+    <Compile Include="examples\ex39.py" />
+    <Compile Include="examples\ex39_test.py" />
+    <Compile Include="examples\ex4.py" />
+    <Compile Include="examples\ex40.py" />
+    <Compile Include="examples\ex41.py" />
+    <Compile Include="examples\ex42.py" />
+    <Compile Include="examples\EX43\ex43_classes.py" />
+    <Compile Include="examples\ex5.py" />
+    <Compile Include="examples\ex6.py" />
+    <Compile Include="examples\ex7.py" />
+    <Compile Include="examples\ex8.py" />
+    <Compile Include="examples\ex9.py" />
+    <Compile Include="examples\hashmap.py" />
+    <Compile Include="examples\test.py" />
+    <Compile Include="lpthw\settings.py" />
+    <Compile Include="lpthw\urls.py" />
+    <Compile Include="lpthw\wsgi.py" />
+    <Compile Include="lpthw\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="Pythagoreon\Calculator.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="examples\pretty.txt" />
+    <Content Include="examples\ryan.txt" />
+    <Content Include="examples\test1.txt" />
+    <Content Include="examples\test1.txt_backup" />
+    <Content Include="examples\test2.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Creations" />
+    <Folder Include="Creations\Survival 101" />
+    <Folder Include="examples" />
+    <Folder Include="examples\EX37" />
+    <Folder Include="examples\EX43" />
+    <Folder Include="lpthw" />
+    <Folder Include="Pythagoreon" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
