@@ -45,7 +45,7 @@ class LaserWeaponArmory(Scene):
         print "The code is 4 digits."
         guesses = 0
 
-        def keypad(message, guesses, prompt):
+        def keypad(message, prompt):
             digit1 = randint(1, 9)
             digit2 = randint(1, 9)
             digit3 = randint(1, 9)
@@ -57,76 +57,89 @@ class LaserWeaponArmory(Scene):
             udigit3 = int(raw_input(prompt))
             udigit4 = int(raw_input(prompt))
             right_code = False
-            def digits():
+            def digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4):
+                guesses = 0
+                
+                    
                 while True:
+                    if udigit1 == digit1:
+                        correct1 = True
+                        break
+                    elif udigit1 > digit1:
+                        print "Your number is greater that the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit1 < digit1:
+                        print "Your  digit is smaller than the  digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit1 > 9:
+                        print message
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    
+
+                while True:
+                    if udigit2 == digit2:
+                        correct2 = True
+                    elif udigit2 > digit2:
+                        print "Your number is greater that the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit2 < digit2:
+                        print "Your  digit is smaller than the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit2 > 9:
+                        print message
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+
+                while True:
+                    if udigit3 == digit3:
+                        correct3 = True
+                    elif udigit3 > digit3:
+                        print "Your number is greater that the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit3 < digit3:
+                        print "Your digit is smaller than the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit3 > 9:
+                        print message
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+
+                while True:
+                    if udigit4 == digit4:
+                        correct4 = True
+                    elif udigit4 > digit4:
+                        print "Your number is greater that the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit4 < digit4:
+                        print "Your digit is smaller than the digit."
+                        guesses +=1
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+                    elif udigit4 > 9:
+                        print message
+                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+
                     if guesses >= 12:
                         print "You can hear the lock fuse as it gives one last time."
                         print "You slump down crying, setting off an alarm that alerts the ship."
                         print "Gothons reach you in minutes and you die a horrible death."
                         your_death = True
-                        return 'death'
+                        break
+                    else:
+                        your_death = False
+                return your_death
+            digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
+            return your_death
+
+        message = "The code is a number 1-9"
+        keypad(message, self.prompt)
+        print "You got the code right, great job!"
 
 
-                if udigit1 == digit1:
-                    correct1 = True
-                elif udigit1 > digit1:
-                    print "Your number is greater that the digit."
-                    guesses +=1
-                    digits()
-                elif udigit1 < digit1:
-                    print "Your  digit is smaller than the  digit."
-                    guesses +=1
-                    digits()
-                elif udigit1 > 9:
-                    print message
-                    digits()
-                    
-
-
-                if udigit2 == digit2:
-                    correct2 = True
-                elif udigit2 > digit2:
-                    print "Your number is greater that the digit."
-                    guesses +=1
-                    digits()
-                elif udigit2 < digit2:
-                    print "Your  digit is smaller than the digit."
-                    guesses +=1
-                    digits()
-                elif udigit2 > 9:
-                    print message
-                    digits()
-
-
-                if udigit3 == digit3:
-                    correct3 = True
-                elif udigit3 > digit3:
-                    print "Your number is greater that the digit."
-                    guesses +=1
-                    digits()
-                elif udigit3 < digit3:
-                    print "Your digit is smaller than the digit."
-                    guesses +=1
-                    digits()
-                elif udigit3 > 9:
-                    print message
-                    digits()
-
-
-                if udigit4 == digit4:
-                    correct4 = True
-                elif udigit4 > digit4:
-                    print "Your number is greater that the digit."
-                    guesses +=1
-                    digits()
-                elif udigit4 < digit4:
-                    print "Your digit is smaller than the digit."
-                    guesses +=1
-                    digits()
-                elif udigit4 > 9:
-                    print message
-                    digits()
-            print "You got the code right, great job!"
             
 
 
