@@ -1,22 +1,32 @@
 ﻿from sys import exit
 from random import randint
+from time import sleep
+
+
 
 class Scene(object):
     
     def enter(self):
-        pass
+        print "This scene is not yet configured. Subclass it and implement enter()."
+        exit(1)
 
 class Engine(object):
     def __init__(self, scene_map):
-        pass
+        self.scene_map = scene_map
     def play(self):
-        pass
+        current_scene = self.scene_map.opening_scene()
+
+        while True:
+            print "\n----------"
+            next_scene_name = current_scene.enter()
+            current_scene = self.scene_map.next_scene(next_scene_name)
 
 class Death(Scene):
     def enter(self):
         print "Sadly your terrible life has come to an end."
         print "Your ghost leaves your body only to be killed by the ghost-hunters they have brought with them."
-        exit()
+        sleep(5)
+        exit(1)
 
 class CentralCorridor(Scene):
 
@@ -43,18 +53,18 @@ class LaserWeaponArmory(Scene):
         print "It looks like you need a code to get into the room"
         print "However if you miss the code 6 times, you can't enter it anymore"                                                                         
         print "The code is rom 1-100."
-        guesses = 0
+        guesses = 1
         code = randint(1, 100)
-        ucode = raw_input(prompt)
+        ucode = int(raw_input(prompt))
         while ucode != code and guesses < 6:
             print "That is incorrect"
             if ucode < code:
                 print "The code you guessed is lower than the code!"
             elif ucode > code:
                 print "The code you guessed is higher than the code!"
-            ucode = raw_input(prompt)
+            ucode = int(raw_input(prompt))
             guesses += 1
-        if guesses == 6:
+        if guesses == 6 and ucode != code:
             print "You hear the lock fuse as alarms start blaring."
             print "You accept defeat as you slump down to the ground."
             print "Seconds later you are killed by a Gothon's blaster."
@@ -99,15 +109,43 @@ class TheBridge(Scene):
 
 class EscapePod(Scene):
     def enter(self):
-        print "You run faster than you ever have before
+        print "You run faster than you ever have before to escape the bomb"
+        print "You get to the escape pods and there are 5 there"
+        print "You dont have time to look and choose one at random."
+        ship = int(raw_input(">>> "))
+        good_ship = randint(1, 5)
+        if ship != good_ship:
+            print 'You jump into ship %d and hit the "GO" button' % ship
+            print "You slowly see the dials come to life and the vehicle starts shaking."
+            print "The pod suddenly shoots off into the air and to space."
+            print "You look behind you and see the ship blow into  a million bits and pieces"
+            print "MISSION ACCOMPLISHED!"
+            return 'finished'
+        elif ship == good_ship:
+            print 'You jump into ship %d and hit the "GO" button' % ship
+            print "The dials come to life and the vehicle starts shaking."
+            print "..."
+            print "Alarms in the pod start blaring as warnings flash on the HUD."
+            print "The pod fails to lift and explodes."
+            print "You die."
+            return 'death'
 
 class Map(object):
+
+    scenes = {
+        'central_corridor': CentralCorridor(),
+        'laser_weapon_armory': LaserWeaponArmory(),
+        'the_bridge': TheBridge(),
+        'escape_pod': EscapePod(),
+        'death': Death()
+    }
+
     def __init__(self, start_scene):
-        pass
+        self.start_scene = start_scene
     def next_scene(self, scene_name):
-        pass
+        return Map.scenes.get(scene_name)
     def opening_scene(self):
-        pass
+        return self.next_scene(self.start_scene)
 
 
 a_map = Map('central_corridor')
