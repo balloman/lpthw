@@ -5,8 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{665f3005-4724-4bdc-8a06-882ba3dc73c5}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>examples\EX43\module1.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -64,6 +63,9 @@
     <Compile Include="examples\ex41.py" />
     <Compile Include="examples\ex42.py" />
     <Compile Include="examples\EX43\ex43_classes.py" />
+    <Compile Include="examples\EX43\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\ex5.py" />
     <Compile Include="examples\ex6.py" />
     <Compile Include="examples\ex7.py" />

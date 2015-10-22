@@ -36,109 +36,35 @@ class CentralCorridor(Scene):
 
 class LaserWeaponArmory(Scene):
     def enter(self):
-        self.prompt = ">>> "
+        prompt = ">>> "
         print "You walk in to see a huge room of weapons."
         print "There are quite a lot of weapons here."
         print 'You see a door that says "Top Secret!" that has a keypad beside it.'
         print "It looks like you need a code to get into the room"
-        print "However if you miss the code 12 times, you can't enter it anymore"                                                                         
-        print "The code is 4 digits."
+        print "However if you miss the code 6 times, you can't enter it anymore"                                                                         
+        print "The code is rom 1-100."
         guesses = 0
-
-        def keypad(message, prompt):
-            digit1 = randint(1, 9)
-            digit2 = randint(1, 9)
-            digit3 = randint(1, 9)
-            digit4 = randint(1, 9)
-            print "Each digit is a number from 1-9"
-            print "Guess all the digits to open the door"
-            udigit1 = int(raw_input(prompt))
-            udigit2 = int(raw_input(prompt))
-            udigit3 = int(raw_input(prompt))
-            udigit4 = int(raw_input(prompt))
-            right_code = False
-            def digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4):
-                guesses = 0
-                
-                    
-                while True:
-                    if udigit1 == digit1:
-                        correct1 = True
-                        break
-                    elif udigit1 > digit1:
-                        print "Your number is greater that the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit1 < digit1:
-                        print "Your  digit is smaller than the  digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit1 > 9:
-                        print message
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    
-
-                while True:
-                    if udigit2 == digit2:
-                        correct2 = True
-                    elif udigit2 > digit2:
-                        print "Your number is greater that the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit2 < digit2:
-                        print "Your  digit is smaller than the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit2 > 9:
-                        print message
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-
-                while True:
-                    if udigit3 == digit3:
-                        correct3 = True
-                    elif udigit3 > digit3:
-                        print "Your number is greater that the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit3 < digit3:
-                        print "Your digit is smaller than the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit3 > 9:
-                        print message
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-
-                while True:
-                    if udigit4 == digit4:
-                        correct4 = True
-                    elif udigit4 > digit4:
-                        print "Your number is greater that the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit4 < digit4:
-                        print "Your digit is smaller than the digit."
-                        guesses +=1
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-                    elif udigit4 > 9:
-                        print message
-                        digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-
-                    if guesses >= 12:
-                        print "You can hear the lock fuse as it gives one last time."
-                        print "You slump down crying, setting off an alarm that alerts the ship."
-                        print "Gothons reach you in minutes and you die a horrible death."
-                        your_death = True
-                        break
-                    else:
-                        your_death = False
-                return your_death
-            digits(message, udigit1, udigit2, udigit3, udigit4, digit1, digit2, digit3, digit4)
-            return your_death
-
-        message = "The code is a number 1-9"
-        keypad(message, self.prompt)
-        print "You got the code right, great job!"
-
+        code = randint(1, 100)
+        ucode = raw_input(prompt)
+        while ucode != code and guesses < 6:
+            print "That is incorrect"
+            if ucode < code:
+                print "The code you guessed is lower than the code!"
+            elif ucode > code:
+                print "The code you guessed is higher than the code!"
+            ucode = raw_input(prompt)
+            guesses += 1
+        if guesses == 6:
+            print "You hear the lock fuse as alarms start blaring."
+            print "You accept defeat as you slump down to the ground."
+            print "Seconds later you are killed by a Gothon's blaster."
+            return 'death'
+        if ucode == code:
+            print "Yay, the code was correct!"
+            print "The door opens to a large room filled with Neutron Bombs, the strongest bombs in the known universe."
+            print "You grab one and run away as fast as you can(these bombs may look small, but they pack a BIG punch!)"
+            print "The first place you go to is the bridge."
+            return 'the_bridge'
 
             
 
@@ -148,11 +74,32 @@ class LaserWeaponArmory(Scene):
 
 class TheBridge(Scene):
     def enter(self):
-        pass
+        print "You run onto the bridge with the bomb."
+        print "There are some gothons there that don't see you."
+        print "They hear you walk in and turn around, but are not using thier guns to shoot"
+        print ", afraid to detonate the bomb"
+        print "You can either slowly drop the bomb at the end of the bridge or throw it and run away."
+        action = raw_input(">>> ")
+        if "throw it" in action:
+            print "You throw it and run"
+            print "What you do not know is that all Gothons on the ship are trained in bomb Undetonation."
+            print "They quickly shoot you and then disarm the bomb"
+            print "You die from your wounds."
+            return 'death'
+        elif "drop" in action:
+            print "You point your blaster at the bomb and slowly walk to the end of the bridge."
+            print "They hold their hands up and you drop the bomb at the end and run."
+            print "You shoot the lock to lock them inside."
+            print "They are too late to react and you get away"
+            print "Let's blow this popsicle stand!"
+            return 'escape_pod'
+
+
+
 
 class EscapePod(Scene):
     def enter(self):
-        pass
+        print "You run faster than you ever have before
 
 class Map(object):
     def __init__(self, start_scene):
