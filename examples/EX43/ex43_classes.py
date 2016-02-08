@@ -28,6 +28,11 @@ class Death(Scene):
         sleep(5)
         exit(1)
 
+class Finished(Scene):
+    def enter(self):
+        print "Congratulations on beating the game."
+        exit(0)
+
 class CentralCorridor(Scene):
 
     def enter(self):
@@ -137,7 +142,8 @@ class Map(object):
         'laser_weapon_armory': LaserWeaponArmory(),
         'the_bridge': TheBridge(),
         'escape_pod': EscapePod(),
-        'death': Death()
+        'death': Death(),
+        'finished': Finished()
     }
 
     def __init__(self, start_scene):

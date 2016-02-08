@@ -1,4 +1,5 @@
-import math
+﻿import math
+from time import sleep
 #Month Value Table
 jan = 0
 feb = 3
@@ -98,6 +99,7 @@ if month < 3:
     nvalue - 2
 
 print "Loading"
+sleep(2)
 if nvalue > 6:
     equation2 = nvalue + svalue
     divisor3 = equation2 / 7

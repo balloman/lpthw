@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{665f3005-4724-4bdc-8a06-882ba3dc73c5}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>examples\EX43\ex43_classes.py</StartupFile>
+    <StartupFile>examples\class1.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -25,6 +25,9 @@
     <Compile Include="Creations\DayCalc.py" />
     <Compile Include="Creations\Survival 101\game.py" />
     <Compile Include="Creations\try.py" />
+    <Compile Include="examples\class1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="examples\ex1.py" />
     <Compile Include="examples\ex10.py" />
     <Compile Include="examples\ex11.py" />
