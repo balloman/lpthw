@@ -31,6 +31,7 @@ class Death(Scene):
 class Finished(Scene):
     def enter(self):
         print "Congratulations on beating the game."
+        sleep(30)
         exit(0)
 
 class CentralCorridor(Scene):
@@ -125,6 +126,7 @@ class EscapePod(Scene):
             print "The pod suddenly shoots off into the air and to space."
             print "You look behind you and see the ship blow into  a million bits and pieces"
             print "MISSION ACCOMPLISHED!"
+            sleep(5)
             return 'finished'
         elif ship == good_ship:
             print 'You jump into ship %d and hit the "GO" button' % ship
