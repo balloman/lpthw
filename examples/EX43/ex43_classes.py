@@ -1,4 +1,4 @@
-﻿from sys import exit
+from sys import exit
 from random import randint
 from time import sleep
 
@@ -52,16 +52,28 @@ class CentralCorridor(Scene):
 
 class LaserWeaponArmory(Scene):
     def enter(self):
+        sleep(5)
         prompt = ">>> "
         print "You walk in to see a huge room of weapons."
+        sleep(1)
         print "There are quite a lot of weapons here."
+        sleep(1)
         print 'You see a door that says "Top Secret!" that has a keypad beside it.'
+        sleep(1)
         print "It looks like you need a code to get into the room"
+        sleep(1)
         print "However if you miss the code 6 times, you can't enter it anymore"                                                                         
+        sleep(1)
         print "The code is rom 1-100."
         guesses = 1
         code = randint(1, 100)
         ucode = int(raw_input(prompt))
+        print "."
+        sleep(1)
+        print "."
+        sleep(1)
+        print "."
+        sleep(1)
         while ucode != code and guesses < 6:
             print "That is incorrect"
             if ucode < code:
@@ -90,6 +102,7 @@ class LaserWeaponArmory(Scene):
 
 class TheBridge(Scene):
     def enter(self):
+        sleep(7)
         print "You run onto the bridge with the bomb."
         print "There are some gothons there that don't see you."
         print "They hear you walk in and turn around, but are not using thier guns to shoot"
@@ -115,6 +128,7 @@ class TheBridge(Scene):
 
 class EscapePod(Scene):
     def enter(self):
+        sleep(10)
         print "You run faster than you ever have before to escape the bomb"
         print "You get to the escape pods and there are 5 there"
         print "You dont have time to look and choose one at random."
@@ -125,6 +139,7 @@ class EscapePod(Scene):
             print "You slowly see the dials come to life and the vehicle starts shaking."
             print "The pod suddenly shoots off into the air and to space."
             print "You look behind you and see the ship blow into  a million bits and pieces"
+            sleep(5)
             print "MISSION ACCOMPLISHED!"
             sleep(5)
             return 'finished'
@@ -132,6 +147,7 @@ class EscapePod(Scene):
             print 'You jump into ship %d and hit the "GO" button' % ship
             print "The dials come to life and the vehicle starts shaking."
             print "..."
+            sleep(2)
             print "Alarms in the pod start blaring as warnings flash on the HUD."
             print "The pod fails to lift and explodes."
             print "You die."
